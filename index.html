@@ -8,8 +8,18 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    
-    <script type="text/javascript" src="test.js"></script> 
+    <style>
+        #map {
+            height: 50%;
+            width: 50%;
+        }
+        body, html {
+            height: 100%;
+        }
+        .container {
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <div class="jumbotron text-center">
@@ -43,12 +53,9 @@
                 </form>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div id="map"></div>
-            </div>
-        </div>
-    </div>
+        <div id="map"></div>
+    </div>              
+    <script type="text/javascript" src="test.js"></script> 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3sM_RkAYxBujzi6Qcox7GmkWQ1n-16Uc&callback=initMap" async defer></script>
 </body>
 </html>
