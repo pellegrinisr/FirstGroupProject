@@ -29,8 +29,9 @@ $(document).ready(function() {
 
             var request = {
                 location: {lat: latCord, lng: longCord},
-                radius: '500',
-                query: 'restaurant'
+                radius: '200',
+                query: 'restaurant',
+                minPriceLevel: 3
             }
 
             service = new google.maps.places.PlacesService(map);
@@ -42,16 +43,30 @@ $(document).ready(function() {
 
     function callback(results, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
+            $('.output').html('');
             for (var i = 0; i < results.length; i++) {
                 var place = results[i];
-                console.log(place.geometry.location.lat());
-                var marker = new google.maps.Marker({
-                    position: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()},
-                    map: map
-                })
+                if (place.rating >= 4) {
+                    var marker = new google.maps.Marker({
+                        position: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()},
+                        map: map
+                    })
+                    console.log(place);
+                    var newRowDiv = $('<div>').addClass('row');
+                    var newColDiv = $('<div>').addClass('col-12 output-item');
+                    // newColDiv.append('<p>').html(place.name);
+                    // newColDiv.append('<p>').html(place.formatted_address)
+                    var namePTag = $('<p>').html(place.name);
+                    var addressPTag = $('<p>').html(place.formatted_address);
+                    newColDiv.append(namePTag).append(addressPTag);
+                    newRowDiv.append(newColDiv);
+                    $('.output').append(newRowDiv);
+                }   
             }
         }
     }
+
+
 });
 
 //initial callback function for maps api

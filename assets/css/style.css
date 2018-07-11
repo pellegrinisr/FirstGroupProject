@@ -1,11 +1,13 @@
 #map {
     height: 50%;
-    width: 50%;
     margin-top: 1rem;
 }
   /* Optional: Makes the sample page fill the window. */
-.container, html, body {
+.map-row, .container, html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+}
+.output-item {
+    border: 1px solid black;
 }
