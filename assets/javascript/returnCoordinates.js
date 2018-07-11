@@ -8,7 +8,8 @@ $(document).ready(function() {
         event.preventDefault();
         var searchTerm = $('#destination').val().replace(' ', '+');
         console.log(searchTerm);
-
+        var latCord;
+        var longCord;
         var fullURL = queryURL + searchTerm + apiKey;
         $.ajax({
             url: fullURL,
@@ -16,28 +17,41 @@ $(document).ready(function() {
         }).then(function(response) {
             console.log(response);
             console.log(response.results[0].geometry.location.lat);
-            var latCord = response.results[0].geometry.location.lat;
+            latCord = response.results[0].geometry.location.lat;
             console.log(response.results[0].geometry.location.lng);
-            var longCord = response.results[0].geometry.location.lng;
-            console.log($('#maps'));
+            longCord = response.results[0].geometry.location.lng;
+            //console.log($('#maps'));
             map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: latCord, lng: longCord},
                 zoom: 15
                 
             });
-            var searchString = 'restaurants';
-            var placesURL = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" + searchString + 
-                "&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&locationbias=circle:2000@" + 
-                latCord + ',' + longCord + apiKey;
-            $.ajax({
-                url: placesURL,
-                method: 'GET'
-            }).then(function(response) {
-                console.log(response);
-            });
+
+            var request = {
+                location: {lat: latCord, lng: longCord},
+                radius: '500',
+                query: 'restaurant'
+            }
+
+            service = new google.maps.places.PlacesService(map);
+            service.textSearch(request, callback);
         });
 
     });
+
+
+    function callback(results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+                var place = results[i];
+                console.log(place.geometry.location.lat());
+                var marker = new google.maps.Marker({
+                    position: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()},
+                    map: map
+                })
+            }
+        }
+    }
 });
 
 //initial callback function for maps api
