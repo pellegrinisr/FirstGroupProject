@@ -46,7 +46,7 @@ $(document).ready(function() {
             var request = {
                 location: {lat: latCord, lng: longCord},
                 radius: '200',
-                query: 'restaurant',
+                query: 'restaurants',
                 minPriceLevel: minPriceLevel,
                 maxPriceLevel: maxPriceLevel
             }
@@ -94,7 +94,7 @@ $(document).ready(function() {
                 google.maps.event.addListener(marker, 'click', function() {
                     console.log(this.position.lat() + ', ' + this.position.lng());
                     console.log(this);
-                    alert()
+                   // alert()
                 })
             }
         }
