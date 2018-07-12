@@ -29,15 +29,15 @@
                         <p>Select Your Price Range</p>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="priceRadioButtons" id="radOne" value="1">
-                            <label class="form-check-label" for="inlineRadio1">$</label>
+                            <label class="form-check-label" for="radOne">$</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="priceRadioButtons" id="radTwo" value="2">
-                            <label class="form-check-label" for="inlineRadio2">$$</label>
+                            <input class="form-check-input" type="radio" name="priceRadioButtons" id="radTwo" value="2" checked>
+                            <label class="form-check-label" for="radTwo">$$</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="priceRadioButtons" id="radThree" value="3">
-                            <label class="form-check-label" for="inlineRadio3">$$$</label>
+                            <label class="form-check-label" for="radThree">$$$</label>
                         </div>
                     </div>
                     <button class="btn btn-secondary" id="btn-submit" type="submit">Submit</button>
@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="row map-row">
-            <div class="col-6">
+            <div class="col-6 map-col">
                 <div id="map"></div>
             </div>
             <div class="col-6 output">
