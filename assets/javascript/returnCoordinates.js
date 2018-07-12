@@ -46,19 +46,24 @@ $(document).ready(function() {
             var request = {
                 location: {lat: latCord, lng: longCord},
                 radius: '200',
-                query: 'restaurants',
-                minPriceLevel: minPriceLevel,
-                maxPriceLevel: maxPriceLevel
+                query: 'hotel',
+               // minPriceLevel: minPriceLevel,
+                //maxPriceLevel: maxPriceLevel
             }
 
             service = new google.maps.places.PlacesService(map);
+            console.log('service: ' + service);
             service.textSearch(request, callback);
+            console.log('textSearch function called');
         });
     });
 
 
     function callback(results, status) {
+        console.log('callback function called');
+        console.log(status);
         if (status == google.maps.places.PlacesServiceStatus.OK) {
+            console.log('status ok');
             $('.output').html('');
             for (var i = 0; i < results.length; i++) {
                 var place = results[i];
