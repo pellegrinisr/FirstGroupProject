@@ -9,9 +9,11 @@ $(document).ready(function() {
             method: 'GET'
         }).then(function(response) {
             console.log(response);
+            var myLatLng = new google.maps.LatLng(response.results[0].geometry.location.lat, response.results[0].geometry.location.lng);
+            console.log(myLatLng);
+            return myLatLng
         });
     };
-    getCoordinates('21720 Thistledown Circle Yorba Linda Ca');
 });
   
    
