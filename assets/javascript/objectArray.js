@@ -13,4 +13,4 @@ var objectArray = [
         name: "Mastro's",
         location: 'Beverly Hills'
     }
-]
+] 

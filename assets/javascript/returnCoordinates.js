@@ -1,4 +1,4 @@
-var map;
+    var map;
 
 
 $(document).ready(function() {
