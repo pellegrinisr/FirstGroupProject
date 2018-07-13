@@ -1,5 +1,4 @@
 var map;
-var placeName;
 
 $(document).ready(function() {
  
@@ -12,40 +11,29 @@ $(document).ready(function() {
        for (var i = 0; i < objectArray.length; i++) {
             console.log('before ajax call: ' + objectArray[i]);
             //console.log(objectArray[i].name);
-            var searchTerm = objectArray[i].location;
-            placeName = objectArray[i].name;
-            //console.log($('#description').html());
-            $.ajax({
-                url: queryURL + searchTerm + apiKey,
-                method: "GET"
-            }).then(function(response) {
-                //console.log(response);
-               // console.log(objectArray[i].name)
-              console.log(placeName);
-               console.log('response: ' + JSON.stringify(response));
-               
-                var request = {
-                    location: {lat: response.results[0].geometry.location.lat, lng: response.results[0].geometry.location.lng},
-                    query: placeName
-                };
-                console.log(request);
-                service = new google.maps.places.PlacesService(map);
-                service.textSearch(request, placeQueryCallback);
-            });
+            handleSearch(objectArray[i].location, objectArray[i].name)
         }
     })
     
-
-    function placeQueryCallback(results, status) {
-        console.log('function called');
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            console.log('success');
-            for (var i = 0; i < results.length; i++) {
-                var place = results[i];
-                console.log(place);
-            }
-
-        }   
+    function handleSearch(searchTerm, placeName) {
+        //console.log($('#description').html());
+        $.ajax({
+            url: queryURL + searchTerm + apiKey,
+            method: "GET"
+        }).then(function(response) {
+            //console.log(response);
+           // console.log(objectArray[i].name)
+          console.log(placeName);
+           console.log('response: ' + JSON.stringify(response));
+           
+            var request = {
+                location: {lat: response.results[0].geometry.location.lat, lng: response.results[0].geometry.location.lng},
+                query: placeName
+            };
+            console.log(request);
+            service = new google.maps.places.PlacesService(map);
+            service.textSearch(request, placeQueryCallback);
+        });
     }
 });
 
@@ -55,11 +43,15 @@ function placeQueryCallback(results, status) {
     console.log('function called');
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         console.log('success');
-        for (var i = 0; i < results.length; i++) {
-            var place = results[i];
-            console.log(place);
-        }
-
+        // for (var i = 0; i < results.length; i++) {
+        //     var place = results[i];
+        //     console.log(place.name);
+        // }
+        var marker = new google.maps.Marker({
+            position: {lat: results[0].geometry.location.lat(), lng: results[0].geometry.location.lng()},
+            map: map,
+            title: results[0].name
+        });
     }   
 }
 function initialMap() {
@@ -67,29 +59,4 @@ function initialMap() {
         center: {lat: 34.040713, lng: -118.2467693},
         zoom: 10
     }); 
-    // for (var i = 0; i < objectArray.length; i++) {
-    //     console.log('before ajax call: ' + objectArray[i]);
-    //     //console.log(objectArray[i].name);
-    //     var searchTerm = objectArray[i].location;
-    //     placeName = objectArray[i].name;
-    //     //console.log($('#description').html());
-    //     $.ajax({
-    //         url: queryURL + searchTerm + apiKey,
-    //         method: "GET"
-    //     }).then(function(response) {
-    //         console.log(placeName);
-    //         //console.log(response);
-    //        // console.log(objectArray[i].name)
-    //        console.log('inside then function of ajax ccall: ' + objectArray[0].name);
-    //        console.log('response: ' + JSON.stringify(response));
-           
-    //         var request = {
-    //             location: {lat: response.results[0].geometry.location.lat, lng: response.results[0].geometry.location.lng},
-    //             query: placeName
-    //         };
-    //         service = new google.maps.places.PlacesService(map);
-    //         service.textSearch(request, placeQueryCallback);
-    //     });
-    // }
-
 }
