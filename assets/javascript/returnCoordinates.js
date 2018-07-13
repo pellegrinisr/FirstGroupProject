@@ -6,7 +6,8 @@ $(document).ready(function() {
     var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=";
     var service;
     var markerArray = [];
-
+    //click event handler for submit button
+   
     $('#btn-submit').on('click', function(event) {
         event.preventDefault();
         var searchTerm = $('#destination').val().replace(' ', '+');
@@ -52,12 +53,12 @@ $(document).ready(function() {
             }
 
             service = new google.maps.places.PlacesService(map);
-            service.textSearch(request, callback);
+            service.textSearch(request, textSearchCallback);
         });
     });
 
-
-    function callback(results, status) {
+    //callback function for PlacesService.textSearch() function
+    function textSearchCallback(results, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
             $('.output').html('');
             for (var i = 0; i < results.length; i++) {
@@ -104,7 +105,7 @@ $(document).ready(function() {
 //initial callback function for maps api
 function initialMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 34.040713, lng: -118.2467693},
-    zoom: 10
-    });
+        center: {lat: 34.040713, lng: -118.2467693},
+        zoom: 10
+    }); 
 }
