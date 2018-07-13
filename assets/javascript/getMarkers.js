@@ -44,6 +44,7 @@ function placeQueryCallback(results, status) {
             map: map,
             title: results[0].name
         });
+        console.log('marker placed: ' + results[0].name);
     }   
 }
 function initialMap() {
