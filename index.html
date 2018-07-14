@@ -8,7 +8,8 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="assets/javascript/objectArray.js"></script>
+        <script src="assets/javascript/objectArray3.js"></script>
+        <script src="assets/javascript/captureClicks.js"></script>
         <!-- <script src="assets/javascript/objectArray2.js"></script> -->
 
     <style>
@@ -33,39 +34,39 @@
         <div class="panel-heading">Select Your Preferences</div>
         <div class="container">
                 <div class="row">
-                    <div id="place" class="col-4">
+                    <div id="place" class="col-4 ">
                         <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Los Angeles
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Downtown</a>
-                        <a class="dropdown-item" href="#">Koreatown</a>
-                        <a class="dropdown-item" href="#">Santa Monica</a>
-                        </div>
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Los Angeles
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-item" href="#">Downtown</div>
+                                <div class="dropdown-item" href="#">Koreatown</div>
+                                <div class="dropdown-item" href="#">Santa Monica</div>
+                            </div>
                         </div>
                     </div>
-                    <div id="type" class="col-4">
+                    <div id="type" class="col-4 ">
                         <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Type
                         </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Food</a>
-                            <a class="dropdown-item" href="#">Attractions</a>
-                            <a class="dropdown-item" href="#">Hotels</a>
+                                <div class="dropdown-item" href="#">Food</div>
+                                <div class="dropdown-item" href="#">Attractions</div>
+                                <div class="dropdown-item" href="#">Hotels</div>
                             </div>
                         </div>
                     </div>
-                    <div id="price" class="col-4">
+                    <div id="price" class="col-4 ">
                             <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Price
-                            </button>
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Price
+                                </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="$">$</a>
-                                <a class="dropdown-item" href="#">$$</a>
-                                <a class="dropdown-item" href="#">$$$</a>
+                                    <div class="dropdown-item" href="$">$</div>
+                                    <div class="dropdown-item" href="#">$$</div>
+                                    <div class="dropdown-item" href="#">$$$</div>
                                 </div>
                             </div>
                     </div>
@@ -84,7 +85,7 @@
         </div>
     </div>                
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3sM_RkAYxBujzi6Qcox7GmkWQ1n-16Uc&libraries=places&callback=initialMap" async defer></script>
-    <script src="assets/javascript/getMarkers2.js"></script>
+    <script src="assets/javascript/generateMarkers.js "></script>
 
 </body>        
 </html>
