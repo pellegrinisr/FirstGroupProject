@@ -13,9 +13,7 @@ function handleSearch(searchTerm, placeName) {
     $.ajax({
         url: queryURL + searchTerm + apiKey,
         method: "GET"
-    }).then(function(response) {
-        //console.log(response);
-        // console.log(objectArray[i].name)
+    }).success(function(response) {
         console.log(placeName);
         console.log('response: ' + JSON.stringify(response));
         
@@ -26,6 +24,8 @@ function handleSearch(searchTerm, placeName) {
         console.log(request);
         service = new google.maps.places.PlacesService(map);
         service.textSearch(request, placeQueryCallback);
+    }).error(function(error){
+        console.log(error);
     });
 }
 
@@ -34,17 +34,12 @@ function handleSearch(searchTerm, placeName) {
 function placeQueryCallback(results, status) {
     console.log('function called');
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        console.log('success');
-        // for (var i = 0; i < results.length; i++) {
-        //     var place = results[i];
-        //     console.log(place.name);
-        // }
         var marker = new google.maps.Marker({
             position: {lat: results[0].geometry.location.lat(), lng: results[0].geometry.location.lng()},
             map: map,
             title: results[0].name
         });
-        console.log('marker placed: ' + results[0].name);
+        console.log('marker placed: ' + marker.title);
     }   
 }
 function initialMap() {
@@ -53,6 +48,14 @@ function initialMap() {
         zoom: 10
     }); 
     for (var i = 0; i < objectArray.length; i++) {
-        handleSearch(objectArray[i].location, objectArray[i].name)
+        handleSearch(objectArray[i].location, objectArray[i].name);
+    }
+    setTimeout(secondSearch, 5000);
+}
+
+function secondSearch() {
+    console.log('secondSearch function called');
+    for (var i = 0; i < objectArray2.length; i++) {
+        handleSearch(objectArray2[i].location, objectArray2[i].name);
     }
 }

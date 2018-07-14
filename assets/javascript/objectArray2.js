@@ -1,58 +1,4 @@
-var objectArray = [
-    {
-        name: 'Felix',
-        location: 'Venice LA CA',
-        type: 'restaurant'
-    },
-
-    {
-        name: "Bestia",
-        location: "Downtown LA",
-        type: 'restaurant'
-    },
-
-    {
-        name: "Guelaguetza",
-        location: 'Koreatown LA',
-        type: 'restaurant'
-    },
-
-    {
-        name: 'Mariscos Jalisco',
-        location: 'Boyle Heights LA',
-        type: 'restaurant'
-    },
-
-    {
-        name: 'Guisados',
-        location: 'Downtown LA',
-        type: 'restaurant' 
-    },
-
-    {
-        name: 'Sun Nong Dang',
-        location: 'Koreatown LA',
-        type: 'restaurant'
-    },
-
-    {
-        name: 'Kobawoo',
-        location: 'Koreatown LA',
-        type: 'restaurat'
-    },
-
-    {
-        name: 'Gamja Gol',
-        location: 'Koreatown LA',
-        type: 'restaurant'
-    },
-
-    {
-        name: 'Beverly Soon Tofu',
-        location: 'Koreatown LA',
-        type: 'restaurant'
-    },
-
+var objectArray2 = [    
     {
         name: 'Plaza Mandarin House',
         location: 'Koreatown Plaza LA',
@@ -106,4 +52,4 @@ var objectArray = [
         location: 'East LA',
         type: 'restaurant'
     }    
-]; 
+]
