@@ -2,33 +2,36 @@
 <html>
 <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-        
+        <link rel="stylesheet" type="text/css" href="reset.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>    
 
  <body>
-    <div class="datatool jumbotron" style="background-color:black; color: white;">
+    <div class="datatool jumbotron" style="background-color:#94618e; color: white; text-align: center; font-family: 'open sans';">
         <div class="head">
-            <h1>Travel App</h1>
+            <h1>A Guide to LA's Hotels &#38; Restaurants</h1>
             <h2>Recommendations by the Developers!</h2>
         </div>
     </div>
                 
         <div class="datatool panel panel-default ">
-            <div class="panel-heading">Select Your Preferences</div>
+            <div class="panel-heading">&#x2710; Select Your Preferences:</div>
             <div class="container">
                     <div class="row">
                         <div id="place" class="col-4">
                             <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                 Los Angeles
+                            <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                 Location 
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Downtown</a>
-                            <a class="dropdown-item" href="#">Koreatown</a>
-                            <a class="dropdown-item" href="#">Santa Monica</a>
+                            <a class="dropdown-item" href="#">&#9656; Downtown LA</a>
+                            <a class="dropdown-item" href="#">&#9656; Koreatown</a>
+                            <a class="dropdown-item" href="#">&#9656; Santa Monica</a>
+                            <a class="dropdown-item" href="#">&#9656; Beverly Hills</a>
+                            <a class="dropdown-item" href="#">&#9656; HollyWood</a>
                             </div>
                             </div>
                         </div>
@@ -38,9 +41,9 @@
                                     Type
                             </button>
                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                               <a class="dropdown-item" href="#">Food</a>
-                               <a class="dropdown-item" href="#">Attractions</a>
-                               <a class="dropdown-item" href="#">Hotels</a>
+                               <a class="dropdown-item" href="#">&#9656; Restaurants</a>
+                               <a class="dropdown-item" href="#">&#9656; Attractions</a>
+                               <a class="dropdown-item" href="#">&#9656; Hotels</a>
                                 </div>
                             </div>
                         </div>
@@ -50,9 +53,9 @@
                                         Price
                                 </button>
                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                   <a class="dropdown-item" href="$">$</a>
-                                   <a class="dropdown-item" href="#">$$</a>
-                                   <a class="dropdown-item" href="#">$$$</a>
+                                   <a class="dropdown-item" href="$">&#9656; $</a>
+                                   <a class="dropdown-item" href="#">&#9656; $$</a>
+                                   <a class="dropdown-item" href="#">&#9656; $$$</a>
                                     </div>
                                 </div>
                         </div>
@@ -60,12 +63,12 @@
             </div>
            
         </div>                   
-        <p align="right"> <button type="submit" class="btn btn-primary" id="submit">Submit</button> </p>    
+        <p align="right"> <button type="submit" class="btn btn-danger" id="submit">Submit</button> </p>    
              
                                     
              <div class="container">
                     <div class="row">
-                      <div id="description" class="col">List Description</div>
+                      <div id="description" class="col">List Description:</div>
                       <div id="map" class="col">Maps</div>
                      
                     </div>
