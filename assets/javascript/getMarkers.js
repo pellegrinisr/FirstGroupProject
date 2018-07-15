@@ -12,24 +12,33 @@ function handleSearch(searchTerm, placeName) {
     //console.log($('#description').html());
     $.ajax({
         url: queryURL + searchTerm + apiKey,
-        method: "GET"
-    }).success(function(response) {
-        console.log(placeName);
-        console.log('response: ' + JSON.stringify(response));
-        
-        var request = {
-            location: {lat: response.results[0].geometry.location.lat, lng: response.results[0].geometry.location.lng},
-            query: placeName
-        };
-        console.log(request);
-        service = new google.maps.places.PlacesService(map);
-        service.textSearch(request, placeQueryCallback);
-    }).error(function(error){
-        console.log(error);
+        method: "GET",
+        success: function(response) {
+            console.log(placeName);
+            //console.log('response: ' + JSON.stringify(response));
+            console.log(response);
+            var request = {
+                location: {lat: response.results[0].geometry.location.lat, lng: response.results[0].geometry.location.lng},
+                query: placeName
+            };
+            //console.log(request);
+            //service = new google.maps.places.PlacesService(map);
+            //service.textSearch(request, placeQueryCallback);
+            var marker = new google.maps.Marker({
+                position: coordinates,
+                map: map,
+                title: name
+            });
+        },
+        error: function(error) {
+            alert.log(error.status + error.statusTest);
+        }
     });
 }
 
-
+//===========================================
+//This shouldn't be called
+//===========================================
 //initial callback function for maps api
 function placeQueryCallback(results, status) {
     console.log('function called');
@@ -50,12 +59,12 @@ function initialMap() {
     for (var i = 0; i < objectArray.length; i++) {
         handleSearch(objectArray[i].location, objectArray[i].name);
     }
-    setTimeout(secondSearch, 5000);
+    //setTimeout(secondSearch, 5000);
 }
 
-function secondSearch() {
-    console.log('secondSearch function called');
-    for (var i = 0; i < objectArray2.length; i++) {
-        handleSearch(objectArray2[i].location, objectArray2[i].name);
-    }
-}
+// function secondSearch() {
+//     console.log('secondSearch function called');
+//     for (var i = 0; i < objectArray2.length; i++) {
+//         handleSearch(objectArray2[i].location, objectArray2[i].name);
+//     }
+// }
