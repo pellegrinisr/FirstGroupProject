@@ -7,7 +7,7 @@ function placeMarker(coordinates, name) {
         title: name
     });
     markerArray.push(marker);
-	 google.maps.event.addListener(marker, 'click', captureMarkerClicks);
+	google.maps.event.addListener(marker, 'click', captureMarkerClicks);
 }
 
 

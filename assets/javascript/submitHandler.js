@@ -1,5 +1,6 @@
 var apiKey = "&key=AIzaSyC3sM_RkAYxBujzi6Qcox7GmkWQ1n-16Uc";
 var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=";
+var divArray = [];
 
 //event handler for the submit button
 $('#submit').on('click', function(event) {
@@ -42,46 +43,10 @@ function getCoordinates(searchTerm) {
     });
 }
 
-//will make the call to the google places api
-//accepts two arguments: placeName is a string
-//representing the name of the place.
-//coordinates is a google LatLng object, or a
-//LatLng literal (i.e {lat: ___, lng: ___})
-function getPlaceData(placeName, coordinates) {
-    var request = {
-        location: coordinates,
-        query: placeName
-    };
-    service = new google.maps.places.PlacesService(map);
-    service.textSearch(request, placeQueryCallback);
-}
-//function called by the google PlacesService.textSearch() function
-function placeQueryCallback(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-        var outputDiv = $('#description');
-        //outputDiv.html('');
-        console.log(results[0]);
-        var nameDiv = $('<div>').addClass('output name');
-        nameDiv.html(results[0].name);
-        outputDiv.append(nameDiv);
-        var addressDiv = $('<div>').addClass('output address');
-        addressDiv.html(results[0].formatted_address);
-        outputDiv.append(addressDiv);
-        var ratingDiv = $('<div>').addClass('output rating');
-        ratingDiv.html("Google's Rating: " + results[0].rating);
-        outputDiv.append(ratingDiv);
-        // var priceDiv = $('<div>').addClass('output price');
-        // priceDiv.html('Price: ' + results[0].price_level);
-        // outputDiv.append(priceDiv);
-    }
-}
-
-
 function filterObjectArray(location, type, price) {
     var filteredByLocation = [];
     var filteredByPrice = [];
     var filteredByType = [];
-    var refocusCoords;
 
     if (location !== 'All') {
         getCoordinates(location);

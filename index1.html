@@ -26,6 +26,9 @@
         .form-control {
             margin-right: 1rem;
         }
+        .output {
+            border: 1px solid black;
+        }
     </style>
 </head>    
 
@@ -67,7 +70,7 @@
             <div class="form-group mb-2">
                 <label for="price">Price</label>
                 <select class="form-control" id="price">
-                    <option>All</option>
+                    <option selected>All</option>
                     <option>$</option>
                     <option>$$</option>
                     <option>$$$</option>
@@ -89,6 +92,7 @@
 </div>
   
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3sM_RkAYxBujzi6Qcox7GmkWQ1n-16Uc&libraries=places&callback=initialMap" async defer></script>
+<script src="assets/javascript/getPlaceData.js"></script>
 <script src="assets/javascript/initializeMap.js"></script>
 <script src="assets/javascript/submitHandler.js"></script>
 <script src="assets/javascript/onMarkerClick.js"></script>

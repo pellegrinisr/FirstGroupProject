@@ -40,7 +40,7 @@ var objectArray = [
     },
 
     {
-        name: 'Sun Nong Dang',
+        name: 'Sun Nong Dan',
         location: 'Koreatown',
         type: 'Restaurant',
         coordinates: {lat: 34.063016, lng: -118.297504},
@@ -104,7 +104,7 @@ var objectArray = [
     },
 
     {
-        name: 'Lasa',
+        name: 'LASA',
         location: 'Downtown',
         type: 'Restaurant',
         coordinates: {lat: 34.061491, lng: -118.239380},
