@@ -52,6 +52,7 @@ function search(placeObject) {
             markerArray[j].setVisible(false);
             isFound = true;
         } else {
+            markerArray[j].setVisible(true);
             j++;
         }
     }
