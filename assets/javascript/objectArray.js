@@ -73,13 +73,13 @@ var objectArray = [
         price: 2
     },
 
-    {
-        name: 'Mandarin House',
-        location: 'Koreatown',
-        type: 'Restaurants',
-        coordinates: {lat: 34.055228, lng: -118.308444},
-        price: 2
-    },
+    // {
+    //     name: 'Mandarin House',
+    //     location: 'Koreatown',
+    //     type: 'Restaurants',
+    //     coordinates: {lat: 34.055228, lng: -118.308444},
+    //     price: 2
+    // },
 
     {
         name: 'Animal', 
@@ -258,13 +258,13 @@ var objectArray = [
         price: 1
     },
 
-    {
-        name: 'Gaam',
-        location: 'Koreatown',
-        type: 'Attractions',
-        coordinates: {lat: 34.063750, lng: -118.296811},
-        price: 2
-    },
+    // {
+    //     name: 'Gaam',
+    //     location: 'Koreatown',
+    //     type: 'Attractions',
+    //     coordinates: {lat: 34.063750, lng: -118.296811},
+    //     price: 2
+    // },
 
     {
         name: 'Chapman Market',
