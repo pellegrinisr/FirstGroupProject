@@ -1,6 +1,6 @@
 var apiKey = "&key=AIzaSyC3sM_RkAYxBujzi6Qcox7GmkWQ1n-16Uc";
 var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=";
-var divArray = [];
+
 
 //event handler for the submit button
 $('#submit').on('click', function(event) {
@@ -89,11 +89,12 @@ function filterObjectArray(location, type, price) {
     console.log(filteredByType);
     if (filteredByType.length === 0) {
         $('#description').html("I'm Sorry, You're search did not return any results");
-    } else {
-        for (var i = 0; i < filteredByType.length; i++) {
-            getPlaceData(filteredByType[i].name, filteredByType[i].coordinates);
-        }
-    }
+    } 
+    // else {
+    //     for (var i = 0; i < filteredByType.length; i++) {
+    //         getPlaceData(filteredByType[i].name, filteredByType[i].coordinates);
+    //     }
+    // }
 }
 
 function searchForMarker(placeObject) {

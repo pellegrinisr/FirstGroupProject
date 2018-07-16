@@ -4,19 +4,6 @@
 //marker
 function captureMarkerClicks() {
     console.log(this);
-
-    for (var i = 0; i < divArray.length; i++) {
-        divArray[i].css('background-color', 'white');
-    }
-    var i = 0;
-    var isFound = false;
-    while (isFound === false && i < divArray.length) {
-        console.log(divArray[i][0].childNodes[0].innerText);
-        if (divArray[i][0].childNodes[0].innerText.indexOf(this.title) !== -1) {
-            divArray[i].css('background-color', '#fefbd8');
-            isFound = true;
-        } else {
-            i++;
-        }
-    }
+    var coordinates = {lat: this.position.lat(), lng: this.position.lng()};
+    getPlaceData(this.title, coordinates);
 }
