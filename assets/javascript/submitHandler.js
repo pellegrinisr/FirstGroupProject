@@ -19,7 +19,7 @@ $('#submit').on('click', function(event) {
         priceInt = 2;
     } else if (price === '$$$') {
         priceInt = 3;
-    } else {
+    } else {    
         priceInt = 'All';
     }
     filterObjectArray(location, type, priceInt);
@@ -74,6 +74,7 @@ function filterObjectArray(location, type, price) {
         filteredByPrice = filteredByLocation.slice();
     }
     if (type !== 'All') {
+        console.log(type);
         for (var i = 0; i < filteredByPrice.length; i++) {
             if (filteredByPrice[i].type !== type) {
                 searchForMarker(filteredByPrice[i]);
@@ -85,6 +86,7 @@ function filterObjectArray(location, type, price) {
     } else {
         filteredByType = filteredByPrice.slice();
     }
+    console.log(filteredByType);
     if (filteredByType.length === 0) {
         $('#description').html("I'm Sorry, You're search did not return any results");
     } else {
