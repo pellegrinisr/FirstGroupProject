@@ -74,7 +74,7 @@ var objectArray = [
     },
 
     {
-        name: 'Plaza Mandarin House',
+        name: 'Mandarin House',
         location: 'Koreatown',
         type: 'Restaurants',
         coordinates: {lat: 34.055228, lng: -118.308444},
@@ -155,10 +155,10 @@ var objectArray = [
     },
 
     {
-        name: 'QUE Skyspace Los Angeles',
+        name: 'OUE Skyspace LA',
         location: 'Downtown LA',
         type: 'Attractions',
-        coordinates: {lat: 34.051139, lng: -118.254586},
+        coordinates: {lat: 34.050917, lng: -118.254618},
         price: 2
     },
 
@@ -214,12 +214,12 @@ var objectArray = [
         name: 'Hollywood Bowl',
         location: 'Hollywood',
         type: 'Attractions',
-        coordinates: {lat: 34.112499, lng: -118.403732},
+        coordinates: {lat: 34.112260, lng: -118.338978},
         price: 3
     },
 
     {
-        name: 'Rodeo Drive', 
+        name: 'Rodeo Dr', 
         location: 'Beverly Hills',
         type: 'Attractions',
         coordinates: {lat: 34.067708, lng: -118.400994},
@@ -272,5 +272,118 @@ var objectArray = [
         type: 'Attractions',
         coordinates: {lat: 34.064134, lng: -118.303775},
         price: 2   
+    },
+
+    //hotels
+    {
+        name: 'Freehand',
+        location: 'Downtown LA',
+        type: 'Hotels',
+        coordinates: {lat: 34.045315, lng: -118.256553},
+        price: 1
+    },
+
+    {
+        name: 'Omni',
+        location: 'Downtown LA',
+        type: 'Hotels',
+        coordinates: {lat: 34.052898, lng: -118.250264},
+        price: 2
+    },
+
+    {
+        name: 'Ritz-Carlton',
+        location: 'Downtown LA',
+        type: 'Hotels',
+        coordinates: {lat: 34.045530, lng: -118.266621},
+        price: 3
+    },
+
+    {
+        name: 'Courtyard by Marriott',
+        location: 'Santa Monica',
+        type: 'Hotels',
+        coordinates: {lat: 34.014601, lng: -118.491430},
+        price: 1
+    },
+
+    {
+        name: 'Hotel Casa del Mar',
+        location: 'Santa Monica',
+        type: 'Hotels',
+        coordinates: {lat: 34.006644, lng: -118.491089},
+        price: 2
+    },
+
+    {
+        name: 'Loews Santa Monica Beach Hotel',
+        location: 'Santa Monica',
+        type: 'Hotels',
+        coordinates: {lat: 34.009293, lng: -118.493145},
+        price: 3
+    },
+
+    {
+        name: 'Kimpton La Peer Hotel',
+        location: 'Hollywood',
+        type: 'Hotels',
+        coordinates: {lat: 34.081817, lng: -118.386937},
+        price: 1
+    },
+
+    {
+        name: 'Petit Ermitage',
+        location: 'Hollywood',
+        type: 'Hotels',
+        coordinates: {lat: 34.087505, lng: -118.383937},
+        price: 2
+    },
+
+    {
+        name: 'The Jeremy West Hollywood',
+        location: 'Hollywood',
+        type: 'Hotels',
+        coordinates: {lat: 34.094560, lng: -118.376201},
+        price: 3
+    },
+
+    {
+        name: 'Best Western Plus',
+        location: 'Koreatown',
+        type: 'Hotels',
+        coordinates: {lat: 34.063642, lng: -118.293253},
+        price: 1
+    },
+
+    {
+        name: 'The LINE',
+        location: 'Koreatown',
+        type: 'Hotels',
+        coordinates: {lat: 34.062391, lng: -118.300990},
+        price: 3
+    },
+
+    {
+        name: 'Sirtaj Hotel',
+        location: 'Beverly Hills',
+        type: 'Hotels',
+        coordinates: {lat: 34.066624, lng: -118.397851},
+        price: 2,
+    },
+
+    {
+        name: 'SIXTY',
+        location: 'Beverly Hills',
+        type: 'Hotels',
+        coordinates: {lat: 34.066906, lng: -118.396101},
+        price: 2
+    },
+
+    {
+        name: "Viceroy L'Ermitage",
+        location: 'Beverly Hills',
+        type: 'Hotels',
+        coordinates: {lat: 34.077924, lng: -118.396095},
+        price: 3
     }
 ]; 
