@@ -9,7 +9,7 @@ function getPlaceData(placeName, coordinates) {
         location: coordinates,
         query: placeName
     };
-    service = new google.maps.places.PlacesService(map);
+    // service = new google.maps.places.PlacesService(map);
     service.textSearch(request, placeQueryCallback);
 }
 //function called by the google PlacesService.textSearch() function

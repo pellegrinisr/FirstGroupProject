@@ -9,14 +9,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="assets/javascript/objectArray.js"></script>
-    <script src="assets/javascript/captureMarkerClicks.js"></script>
 
     <style>
         html, body, .container {
             height: 100%;
         }
         #map {
-            height: 400px;
+            height: 50rem;
             margin-right: 1rem;
             margin-bottom: 1rem;
         }
@@ -29,6 +28,10 @@
         .output {
             border: 1px solid black;
         }
+        .placeholder {
+            width: 100%;
+            height: 50rem;
+        }
     </style>
 </head>    
 
@@ -40,7 +43,24 @@
             <h2>Recommendations by the Developers!</h2>
         </div>
     </div>
-
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Place Info</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            test test test
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
              
     <div class="datatool panel panel-default ">
         <div class="panel-heading">Select Your Preferences</div>
@@ -48,29 +68,27 @@
             <div class="form-group mb-2">
                 <label for="location">Location</label>
                 <select class="form-control" id="location">
-                    <option>All</option>
+                    <option></option>
                     <option>Downtown LA</option>
                     <option>Beverly Hills</option>
-                    <option>East Los Angeles</option>
                     <option>Hollywood</option>
                     <option>Koreatown</option>
                     <option>Santa Monica</option>
-                    <option>West Los Angeles</option>
                 </select>
             </div>
             <div class="form-group mb-2">
                 <label for="type">Type</label>
                 <select class="form-control" id="type">
-                    <option>All</option>
-                    <option>Hotels</option>
+                    <option></option>
                     <option>Attractions</option>
+                    <option>Hotels</option>
                     <option>Restaurants</option>
                 </select>
             </div>
             <div class="form-group mb-2">
                 <label for="price">Price</label>
                 <select class="form-control" id="price">
-                    <option selected>All</option>
+                    <option>All</option>
                     <option>$</option>
                     <option>$$</option>
                     <option>$$$</option>
@@ -85,6 +103,7 @@
     <div class="row map-row">
         <div id="description" class="col">
             <!--where the output will go after user clicks on a marker.-->
+            <img class="placeholder" src="assets/images/losAngelesPlaceholder.jpg">
         </div>
         <div id="map" class="col map-col"></div>
         

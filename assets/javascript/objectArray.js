@@ -2,63 +2,63 @@
 var objectArray = [
     //Restaurants
     {
-        name: 'Felix',
-        location: 'West Los Angeles',
+        name: "Father's Office",
+        location: 'Santa Monica',
         type: 'Restaurants',
-        coordinates: {lat: 33.992677, lng: -118.471807},
-        price: 3
-    },
-
-    {
-        name: "Bestia",
-        location: "Downtown LA",
-        type: 'Restaurants',
-        coordinates: {lat: 34.033762, lng: -118.229242},
-        price: 3
-    },
-
-    {
-        name: "Guelaguetza",
-        location: 'Koreatown',
-        type: 'Restaurants',
-        coordinates: {lat: 34.052487, lng: -118.300722}, 
-        price: 2
-    },
-
-    {
-        name: 'Mariscos Jalisco',
-        location: 'East Los Angeles',
-        type: 'Restaurants',
-        coordinates: {lat: 34.020945, lng: -118.212889},
+        coordinates: {lat: 34.029588, lng: -118.498408},
         price: 1
     },
 
     {
-        name: 'Guisados',
-        location: 'Downtown LA',
+        name: "Fig",
+        location: "Santa Monica",
         type: 'Restaurants',
-        coordinates: {lat: 34.046708, lng: -118.250609},
-        price: 1
-    },
-
-    {
-        name: 'Sun Nong Dan',
-        location: 'Koreatown',
-        type: 'Restaurants',
-        coordinates: {lat: 34.063016, lng: -118.297504},
+        coordinates: {lat: 34.018216, lng: -118.501257},
         price: 2
     },
 
     {
-        name: 'Kobawoo',
+        name: "Melisse",
+        location: 'Santa Monica',
+        type: 'Restaurants',
+        coordinates: {lat: 34.024552, lng: -118.491353}, 
+        price: 3
+    },
+
+    {
+        name: 'Il Pastaio',
+        location: 'Beverly Hills',
+        type: 'Restaurants',
+        coordinates: {lat: 34.070908, lng: -118.400814},
+        price: 1
+    },
+
+    {
+        name: 'Hinoki & the Bird',
+        location: 'Beverly Hills',
+        type: 'Restaurants',
+        coordinates: {lat: 34.056730, lng: -118.415212},
+        price: 2
+    },
+
+    {
+        name: 'Spago',
+        location: 'Beverly Hills',
+        type: 'Restaurants',
+        coordinates: {lat: 34.067920, lng: -118.397593},
+        price: 2
+    },
+
+    {
+        name: "Park's BBQ",
         location: 'Koreatown',
         type: 'restaurat',
-        coordinates: {lat: 34.060134, lng: -118.290975},
-        price: 2
+        coordinates: {lat: 34.054214,  lng: -118.292047},
+        price: 3
     },
 
     {
-        name: 'Gamja Gol',
+        name: 'Guelaguetza',
         location: 'Koreatown',
         type: 'Restaurants',
         coordinates: {lat: 34.052887, lng: -118.300354},
@@ -70,47 +70,39 @@ var objectArray = [
         location: 'Koreatown',
         type: 'Restaurants',
         coordinates: {lat: 34.053122, lng: -118.292524},
-        price: 2
-    },
-
-    // {
-    //     name: 'Mandarin House',
-    //     location: 'Koreatown',
-    //     type: 'Restaurants',
-    //     coordinates: {lat: 34.055228, lng: -118.308444},
-    //     price: 2
-    // },
-
-    {
-        name: 'Animal', 
-        location: 'Hollywood',
-        type: 'Restaurants',
-        coordinates: {lat: 34.079316, lng: -118.361761},
-        price: 3
-    },
-
-    {
-        name: 'Tsujita LA',
-        location: 'West Los Angeles',
-        type: 'Restaurants',
-        coordinates: {lat: 34.039753, lng: -118.442687},
-        price: 2
-    },
-
-    {
-        name: 'Kogi Taqueria',
-        location: 'West Los Angeles',
-        type: 'Restaurants',
-        coordinates: {lat: 34.024521, lng: -118.411203},
         price: 1
     },
 
     {
-        name: 'LASA',
+        name: 'Badmaash', 
         location: 'Downtown LA',
         type: 'Restaurants',
-        coordinates: {lat: 34.061491, lng: -118.239380},
+        coordinates: {lat: 34.051326, lng: -118.244825},
         price: 2
+    },
+
+    {
+        name: 'Grand Central Market',
+        location: 'Downtown LA',
+        type: 'Restaurants',
+        coordinates: {lat: 34.050842, lng:-118.248774},
+        price: 1
+    },
+
+    {
+        name: 'Broken Spanish',
+        location: 'Downtown LA',
+        type: 'Restaurants',
+        coordinates: {lat: 34.043505, lng: -118.263499},
+        price: 3
+    },
+
+    {
+        name: 'Guisados',
+        location: 'Hollywood',
+        type: 'Restaurants',
+        coordinates: {lat: 34.084674, lng: -118.385251},
+        price: 1
     }, 
 
     {
@@ -122,28 +114,12 @@ var objectArray = [
     },
 
     {
-        name: 'Night + Market Song',
+        name: 'Trois Mec',
         location: 'Hollywood',
         type: 'Restaurants',
-        coordinates: {lat: 34.086916, lng: -118.275854},
-        price: 2
+        coordinates: {lat: 34.084454, lng: -118.338133},
+        price: 3
     },
-
-    {
-        name: 'Kismet', 
-        location: 'Hollywood',
-        type: 'Restaurants',
-        coordinates: {lat: 34.100235, lng: -118.290733},
-        price: 2
-    },
-
-    {
-        name: 'Churros Don Abel',
-        location: 'East Los Angeles',
-        type: 'Restaurants',
-        coordinates: {lat: 34.019081, lng: -118.152000},
-        price: 1
-    }, 
     
     //Attractions
     {
@@ -258,16 +234,8 @@ var objectArray = [
         price: 1
     },
 
-    // {
-    //     name: 'Gaam',
-    //     location: 'Koreatown',
-    //     type: 'Attractions',
-    //     coordinates: {lat: 34.063750, lng: -118.296811},
-    //     price: 2
-    // },
-
     {
-        name: 'Chapman Market',
+        name: 'Chapman Plaza',
         location: 'Koreatown',
         type: 'Attractions',
         coordinates: {lat: 34.064134, lng: -118.303775},

@@ -1,10 +1,12 @@
 var apiKey = "&key=AIzaSyC3sM_RkAYxBujzi6Qcox7GmkWQ1n-16Uc";
 var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=";
 var divArray = [];
+var submitClicked = false;
 
 //event handler for the submit button
 $('#submit').on('click', function(event) {
     event.preventDefault();
+    submitClicked = true;
     for (var i = 0; i < markerArray.length; i++) {
         markerArray[i].setVisible(true);
     }
@@ -13,16 +15,22 @@ $('#submit').on('click', function(event) {
     var type = $('#type').val();
     var price = $('#price').val();
     var priceInt;
-    if (price === '$') {
-        priceInt = 1;
-    } else if (price === '$$') {
-        priceInt = 2;
-    } else if (price === '$$$') {
-        priceInt = 3;
-    } else {    
-        priceInt = 'All';
+    if (location !== '' || type !== '') {
+        if (price === '$') {
+            priceInt = 1;
+        } else if (price === '$$') {
+            priceInt = 2;
+        } else if (price === '$$$') {
+            priceInt = 3;
+        } else {
+            priceInt = 'All';
+        }
+        console.log(priceInt);
+        filterObjectArray(location, type, priceInt);
+    } else {
+        alert('error.  all fields are required');
     }
-    filterObjectArray(location, type, priceInt);
+   
 });
 
 //function to handle ajax call
@@ -35,7 +43,7 @@ function getCoordinates(searchTerm) {
         success: function(response) {
             console.log(response);
             map.setCenter({lat: response.results[0].geometry.location.lat, lng: response.results[0].geometry.location.lng});
-            map.setZoom(12);
+            map.setZoom(13);
         },
         error: function(error) {
             alert.log(error.status + error.statusTest);
@@ -48,43 +56,39 @@ function filterObjectArray(location, type, price) {
     var filteredByPrice = [];
     var filteredByType = [];
 
-    if (location !== 'All') {
-        getCoordinates(location);
-        for (var i = 0; i < objectArray.length; i++) {
-            if (objectArray[i].location !== location) {
-                searchForMarker(objectArray[i]);
-            } else {
-                //getPlaceData(objectArray[i].name, objectArray[i].coordinates);
-                filteredByLocation.push(objectArray[i]);
-            }
-        } 
-    } else {
-        filteredByLocation = objectArray.slice();
-    }
+    getCoordinates(location);
+    for (var i = 0; i < objectArray.length; i++) {
+        if (objectArray[i].location !== location) {
+            searchForMarker(objectArray[i]);
+        } else {
+            //getPlaceData(objectArray[i].name, objectArray[i].coordinates);
+            filteredByLocation.push(objectArray[i]);
+        }
+    } 
+    console.log('filtered by location');
+    console.log(filteredByLocation);
     if (price !== 'All') {
         for (var i = 0; i < filteredByLocation.length; i++) {
             if (filteredByLocation[i].price !== price) {
                 searchForMarker(filteredByLocation[i]);
             } else {
-               //getPlaceData(objectArray[i].name, objectArray[i].coordinates);
-               filteredByPrice.push(filteredByLocation[i]);
+                //getPlaceData(objectArray[i].name, objectArray[i].coordinates);
+                filteredByPrice.push(filteredByLocation[i]);
             }
         }
     } else {
         filteredByPrice = filteredByLocation.slice();
     }
-    if (type !== 'All') {
-        console.log(type);
-        for (var i = 0; i < filteredByPrice.length; i++) {
-            if (filteredByPrice[i].type !== type) {
-                searchForMarker(filteredByPrice[i]);
-            } else {
-                //getPlaceData(objectArray[i].name, objectArray[i].coordinates);
-                filteredByType.push(filteredByPrice[i]);
-            }
+   
+    console.log('filtered by price');
+    console.log(filteredByPrice);
+    for (var i = 0; i < filteredByPrice.length; i++) {
+        if (filteredByPrice[i].type !== type) {
+            searchForMarker(filteredByPrice[i]);
+        } else {
+            //getPlaceData(objectArray[i].name, objectArray[i].coordinates);
+            filteredByType.push(filteredByPrice[i]);
         }
-    } else {
-        filteredByType = filteredByPrice.slice();
     }
     console.log(filteredByType);
     if (filteredByType.length === 0) {

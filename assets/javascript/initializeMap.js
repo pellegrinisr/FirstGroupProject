@@ -1,4 +1,5 @@
 var markerArray = [];
+var service;
 
 function placeMarker(coordinates, name) {
     var marker = new google.maps.Marker({
@@ -11,12 +12,14 @@ function placeMarker(coordinates, name) {
 }
 
 
-function initialMap() {
+function initialMap() { 
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 34.040713, lng: -118.2467693},
-        zoom: 10
+        zoom: 11
     }); 
+
     for (var i = 0; i < objectArray.length; i++) {
         placeMarker(objectArray[i].coordinates, objectArray[i].name);
     }
+    service = new google.maps.places.PlacesService(map);
 }
