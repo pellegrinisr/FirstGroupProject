@@ -8,7 +8,7 @@ $('#submit').on('click', function(event) {
     for (var i = 0; i < markerArray.length; i++) {
         markerArray[i].setVisible(true);
     }
-   // $('#description').html('');
+    $('#description').html('');
     var location = $('#location').val();
     var type = $('#type').val();
     var price = $('#price').val();

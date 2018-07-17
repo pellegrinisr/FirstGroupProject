@@ -17,7 +17,7 @@ function placeQueryCallback(results, status) {
     console.log('placeQueryCallback executed');
     console.log(status);
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        $('#description').html('');
+        //$('#description').html('');
         console.log(results[0]);
         var newPlaceDiv = $('<div>').addClass('output');
         var nameDiv = $('<div>').addClass('name');
@@ -34,6 +34,7 @@ function placeQueryCallback(results, status) {
         ratingDiv.html("Google's Rating: " + results[0].rating);
         newPlaceDiv.append(ratingDiv);
         $('#description').append(newPlaceDiv);
+        divArray.push(newPlaceDiv);
         console.log(divArray);
         // var priceDiv = $('<div>').addClass('output price');
         // priceDiv.html('Price: ' + results[0].price_level);
