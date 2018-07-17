@@ -174,7 +174,7 @@ var objectArray = [
         name: 'Walk of Fame',
         location: 'Hollywood',
         type: 'Attractions',
-        coordinates: {lat: 34.100798, lng: -118.340939},
+        coordinates: {lat: 34.101718, lng: -118.333724},
         price: 1
     },
 
