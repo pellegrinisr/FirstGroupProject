@@ -9,7 +9,7 @@ function getPlaceData(placeName, coordinates) {
         location: coordinates,
         query: placeName
     };
-    //service = new google.maps.places.PlacesService(map);
+    service = new google.maps.places.PlacesService(map);
     service.textSearch(request, placeQueryCallback);
 }
 //function called by the google PlacesService.textSearch() function
@@ -52,7 +52,7 @@ function detailsCallback(place, status) {
         phoneDiv.html(place.formatted_phone_number);
         newPlaceDiv.append(phoneDiv);
         var urlDiv = $('<div>').addClass('url');
-        var linkTag = "<a href='" + place.website + "' target='_blank'>" + place.website + "</a>";
+        var linkTag = "<a href='" + place.website + "' target='_blank'>" + place.name + "</a>";
         urlDiv.html(linkTag);
         newPlaceDiv.append(urlDiv);
         $('#description').append(newPlaceDiv);

@@ -23,8 +23,9 @@ function placeMarker(coordinates, name, type) {
 
 function initialMap() { 
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 34.040713, lng: -118.2467693},
-        zoom: 11
+        center: {lat: 34.061754, lng: -118.346858},
+        zoom: 11,
+        mapTypeControl: false 
     }); 
 
     for (var i = 0; i < objectArray.length; i++) {

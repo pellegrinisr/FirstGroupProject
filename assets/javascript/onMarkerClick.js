@@ -6,7 +6,7 @@
 
 function captureMarkerClicks() {
     if (submitClicked === true) {
-        console.log(this);
+        console.log(this.title);
 
         for (var i = 0; i < divArray.length; i++) {
             divArray[i].css('background-color', 'white');
@@ -47,7 +47,7 @@ function placeSearchQueryCallback(results, status) {
             fields: ['name', 'website', 'formatted_phone_number', 'photos', 'geometry', 'formatted_address']
         };
   
-        service = new google.maps.places.PlacesService(map);
+       // service = new google.maps.places.PlacesService(map);
         service.getDetails(request, callback);
     }
 }
@@ -56,7 +56,7 @@ function callback(place, status) {
     console.log(status);
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         console.log(place);
-        var contentString = "<div class='info-window-content'>" + "<p>" + place.name + "</p><p>" + place.formatted_address + "</p><p>" + place.formatted_phone_number + "</p><p><a href='" + place.website + "'target='_blank'>" + place.website + "</a></p></div>"
+        var contentString = "<div class='info-window-content'>" + "<p>" + place.name + "</p><p>" + place.formatted_address + "</p><p>" + place.formatted_phone_number + "</p><p><a href='" + place.website + "'target='_blank'>" + place.name + "</a></p>" + "<img src='" + "</div>"
         // var contentDiv = $('<div>').addClass('info-window-content');
         // var nameP = $('<p>').html(place.name);
         // var phoneP = $('<p>').html(place.formatted_phone_number);

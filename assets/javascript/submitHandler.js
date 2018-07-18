@@ -1,5 +1,4 @@
-var apiKey = "&key=AIzaSyC3sM_RkAYxBujzi6Qcox7GmkWQ1n-16Uc";
-var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=";
+
 var divArray = [];
 var submitClicked = false;
 
@@ -37,6 +36,11 @@ $('#submit').on('click', function(event) {
 //if user selects a location
 //so that we can recenter the map
 function getCoordinates(searchTerm) {
+    var apiKey = "&key=AIzaSyC3sM_RkAYxBujzi6Qcox7GmkWQ1n-16Uc";
+    var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=";
+    if (searchTerm === 'Hollywood') {
+        searchTerm = '7425 Sunset Blvd, Los Angeles, CA 90046'
+    }
     $.ajax({
         url: queryURL + searchTerm + apiKey,
         method: "GET",
@@ -114,4 +118,3 @@ function searchForMarker(placeObject) {
         }
     }
 }
-
